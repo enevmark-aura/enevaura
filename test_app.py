@@ -1,15 +1,9 @@
-def add(a, b):
-    """Складывает два числа и возвращает результат."""
-    return a + b
+from app import add, greet
 
 
-def greet(name):
-    """Возвращает приветствие для переданного имени."""
-    return f"Hello, {name}!"
+def test_add():
+    assert add(2, 3) == 5
 
 
-# Этот блок запускается, когда файл вызван напрямую (python app.py).
-# При импорте (например, из тестов) содержимое блока не выполняется.
-if __name__ == "__main__":
-    print(greet("PM"))
-    print(f"2 + 3 = {add(2, 3)}")
+def test_greet():
+    assert greet("PM") == "Hello, PM!"
